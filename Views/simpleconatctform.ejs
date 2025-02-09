@@ -1,0 +1,164 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Host Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px 30px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        form h1 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555555;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"], textarea, select, input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 80px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .top-menu {
+      background-color: #2a5298;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    .top-menu .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .top-menu ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    .top-menu ul li {
+      display: inline;
+    }
+    .top-menu ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    .top-menu ul li a:hover {
+      color: #f1f1f1;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="top-menu">
+        <div class="logo">shreyas Store</div>
+        <ul>
+          <li><a href="/home">Home</a></li>
+          <li><a href="/user">Products</a></li>
+          <li><a href="/favourites">Favourites</a></li>
+          <li><a href="/host">Add Product</a></li>
+        </ul>
+      </div>
+    <form action="/result" method="POST" enctype="multipart/form-data">
+        <h1>Add Your Item</h1>
+        <div class="form-group">
+           
+           
+        </div>
+        <div class="form-group">
+            <label for="adtitle">Ad Title:</label>
+            <input type="text" id="adtitle"    name="adtitle" placeholder="Enter the title of your ad">
+        </div>
+        <div class="form-group">
+            <label for="description">Ad Description:</label>
+            <textarea id="description" name="description"  placeholder="Enter your description here..."></textarea>
+        </div>
+        <div class="form-group">
+            <label for="category">Choose a category:</label>
+            <select id="category" name="category">
+                <option value="cars">Cars</option>
+                <option value="bikes" >Bike</option>
+                <option value="furniture" >Furniture</option>
+                <option value="tech-accessories" >tech-accessories</option>
+                <option value="electrical-appliances">Electrical Appliances</option>
+                <option value="others">Others</option>
+            </select>
+        </div>
+        <input type="file" name="file" accept="image/jpeg, image/jpg, image/png, application/pdf, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" required>
+        
+        <input type="submit" value="Add Item" >
+    </form>
+
+    <!-- <script>
+
+
+     
+       
+        if(querypa){
+
+            document.getElementById('description').value = "shshhshhs";
+        }
+        else{
+            document.getElementById('description').value = "";
+            document.getElementById('category').value ="";
+        }
+        
+      </script> -->
+</body>
+</html>
