@@ -35,7 +35,7 @@ const upload=multer({storage});
 app.use(parse.urlencoded());
 
 app.set('view engine','ejs');
-app.set('views',path.join(__dirname, "../Views"));
+app.set('views',path.join(__dirname, "./Views"));
 app.get("/home",firstrouter.application);
 app.post("/result",upload.single('file'),firstrouter.postdata);
 app.use("/data",firstrouter.displayimage);
