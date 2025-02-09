@@ -4,6 +4,7 @@ const firstrouter=require('./Routes/simplerouter');
 const db=require('./dbconnect/databaseconnect');
 const multer=require('multer');
 const cloudinary=require('cloudinary')
+const path = require("path");
 
 const app=express();
 
@@ -34,7 +35,7 @@ const upload=multer({storage});
 app.use(parse.urlencoded());
 
 app.set('view engine','ejs');
-app.set('views','Views');
+app.set('views',path.join(__dirname, "../Views"));
 app.get("/home",firstrouter.application);
 app.post("/result",upload.single('file'),firstrouter.postdata);
 app.use("/data",firstrouter.displayimage);
