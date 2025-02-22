@@ -52,26 +52,26 @@ const postdata= async(req,res,next)=>{
 // //
  if(req.files[0].mimetype == "video/mp4"){
 
-  try{
-  console.log(req.files);
-  let Imagekitresult= await imagekit.upload({
-    file: fs.createReadStream(req.files[0].path), // Local video file
-    fileName: req.files[0].filename,
-    folder: "/videos", // Optional: store in a specific folder
-    useUniqueFileName: true, // Ensures no duplicate names
-    tags: ["video", "demo"],
+//   try{
+//   console.log(req.files);
+//   let Imagekitresult= await imagekit.upload({
+//     file: fs.createReadStream(req.files[0].path), // Local video file
+//     fileName: req.files[0].filename,
+//     folder: "/videos", // Optional: store in a specific folder
+//     useUniqueFileName: true, // Ensures no duplicate names
+//     tags: ["video", "demo"],
     
-  });
+//   });
 
-console.log("Video uploaded successfully:", Imagekitresult);
-      console.log("The url of the video is as follows "+Imagekitresult.url);
-       Videoresult=Imagekitresult.url;
-     // res.send("<h1>File Uploaded Sucess</h1>");
-  }catch(error){
-    console.error("Error uploading video:", error);
-    res.send("<h1>File Uploaded Failed</h1>")
+// console.log("Video uploaded successfully:", Imagekitresult);
+//       console.log("The url of the video is as follows "+Imagekitresult.url);
+//        Videoresult=Imagekitresult.url;
+//      // res.send("<h1>File Uploaded Sucess</h1>");
+//   }catch(error){
+//     console.error("Error uploading video:", error);
+//     res.send("<h1>File Uploaded Failed</h1>")
 
-  }
+//   }
 
 
 //upload the image for the server
@@ -116,7 +116,7 @@ if( req.files[1].mimetype == "image/jpeg" || req.files[1].mimetype ==  "image/jp
 });
 
 
-const  abc=new dbclass(req.body.adtitle,req.body.description,req.body.category,cloudnary.secure_url,Videoresult,result.url);
+const  abc=new dbclass(req.body.adtitle,req.body.description,req.body.category,cloudnary.secure_url,result.url);
 abc.insertdata();
 // res.redirect("/data");
 
