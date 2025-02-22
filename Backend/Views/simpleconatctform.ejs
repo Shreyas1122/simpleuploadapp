@@ -140,7 +140,21 @@
                 <option value="others">Others</option>
             </select>
         </div>
-        <input type="file" name="file" accept="image/jpeg, image/jpg, image/png, application/pdf, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" required>
+        <input type="file" name="video" accept="video/mp4"  id ="video" required>
+        <label for="Acceptsvideo" style="font-size: small; font-weight: bold; color: #e93737;">
+            Only Accepts Video(mp4)
+          </label>
+
+        <input type="file" name="video" accept="image/jpeg, image/jpg, image/png,"  id ="video" required>
+        <label for="Acceptsvideo" style="font-size: small; font-weight: bold; color:  #cd3232">
+            Only Accepts Images(Jpeg,png,jpg)
+          </label>
+
+          <input type="file" name="video" accept="application/pdf"  id ="video" required>
+          <label for="Acceptsvideo" style="font-size: small; font-weight: bold; color:  #cd3232">
+              Only Accepts pdf(.pdf)
+            </label>
+
         
         <input type="submit" value="Add Item" >
     </form>

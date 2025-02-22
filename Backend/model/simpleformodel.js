@@ -6,12 +6,13 @@ const dbclass=class simpleform{
 
     }
 
-constructor(title,descrpt,category,url,filetype){
+constructor(title,descrpt,category,url,videourl,pdfurls){
 this.title=title;
 this.descrpt=descrpt;
 this.category=category;
-this.url=url;
-this.filetype=filetype
+this.imageurl=url;
+this.videourl=videourl;
+this.pdfurl=pdfurls;
 
   }
 
