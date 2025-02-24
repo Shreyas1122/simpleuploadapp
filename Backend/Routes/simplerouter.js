@@ -50,7 +50,7 @@ const postdata= async(req,res,next)=>{
 //  const uploadvideo= async(req,res,next)=>{
   
 // //
- if(req.files[0].mimetype == "video/mp4"){
+ 
 
 //   try{
 //   console.log(req.files);
@@ -76,7 +76,7 @@ const postdata= async(req,res,next)=>{
 
 //upload the image for the server
 
-if( req.files[1].mimetype == "image/jpeg" || req.files[1].mimetype ==  "image/jpg" || req.files[1].mimetype == "image/png"){
+if( req.files[0].mimetype == "image/jpeg" || req.files[0].mimetype ==  "image/jpg" || req.files[0].mimetype == "image/png"){
 
   console.log("The request data is a s follows ");
   console.log(req.body);
@@ -84,7 +84,7 @@ if( req.files[1].mimetype == "image/jpeg" || req.files[1].mimetype ==  "image/jp
   console.log(req.files);
 
   //upload file to cloudinary 
-  const file =req.files[1].path;
+  const file =req.files[0].path;
 
   try{
   var cloudnary;
@@ -104,12 +104,12 @@ if( req.files[1].mimetype == "image/jpeg" || req.files[1].mimetype ==  "image/jp
     
 
 }
- if(req.files[2].mimetype == "application/pdf"){
+ if(req.files[1].mimetype == "application/pdf"){
   try{
 
   const result = await imagekit.upload({
-    file: fs.createReadStream(req.files[2].path), // Read the local PDF file
-    fileName: req.files[2].filename, // Keep original file name
+    file: fs.createReadStream(req.files[1].path), // Read the local PDF file
+    fileName: req.files[1].filename, // Keep original file name
     folder: "/pdf_files", // Upload to a specific folder in ImageKit
     useUniqueFileName: true, // Avoid name conflicts
     tags: ["pdf", "documents"] // Add optional tags
@@ -152,7 +152,7 @@ else{
 
 
 
-}
+
   }
 
 
