@@ -38,19 +38,35 @@ const app=express();
 
 //for image 
 
-const storage=multer.diskStorage({
-  destination:function(req,file,cb){
-    cb(null,'Uploads/');
+// const storage=multer.diskStorage({
+//   destination:function(req,file,cb){
+//     cb(null,'Uploads/');
+//   },
+//   filename:function(req,file,cb){
+//     cb(null,Date.now() + "-" +file.originalname);
+//   }
+// })
+
+
+
+// // //for image 
+//  const upload=multer({storage});
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    const uploadPath = path.join(__dirname, "Uploads/");
+    if (!fs.existsSync(uploadPath)) {
+      fs.mkdirSync(uploadPath, { recursive: true }); // Ensure the folder exists
+    }
+    cb(null, uploadPath);
   },
-  filename:function(req,file,cb){
-    cb(null,Date.now() + "-" +file.originalname);
-  }
-})
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
 
+const upload=multer({storage});
 
-
-// //for image 
- const upload=multer({storage});
 
 
 
